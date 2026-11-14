@@ -32,6 +32,25 @@ export const coastalSites: Record<string, CoastalSite> = {
       { icon: "🪸", title: "Guided Seagrass Snorkel Trail", time: "Eco-Sud Educational Booth • 10:00 - 12:00", badge: "Free / Kids Welcome" }
     ]
   },
+  baiedutombeau: {
+    title: "Baie du Tombeau",
+    coords: "20.1325° S, 57.4966° E • Port Louis District",
+    status: "Mangrove & Estuary Zone",
+    tide: "+0.45 m",
+    uv: "7 (High)",
+    clarity: "6 m",
+    nisarNote: "Mixed backscatter observed at the river mouth. High coherence in the developed coastal areas, but lower coherence in the mangroves due to tidal inundation and vegetation movement.",
+    history: "Baie du Tombeau (Tomb Bay) is historically significant, named after a tomb erected for a Dutch governor or shipwrecked sailors. It is home to one of the island's most important remaining mangrove ecosystems, which acts as a natural barrier against erosion.",
+    erosionInfo: "The bay faces erosion exacerbated by the Rivière du Tombeau estuary and storm surges. Conservation efforts are focused on restoring the mangrove forests which trap sediment and stabilize the shoreline.",
+    images: [
+      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1589825765896-2350a572a305?auto=format&fit=crop&w=800&q=80"
+    ],
+    events: [
+      { icon: "🌱", title: "Mangrove Reforestation Drive", time: "Baie du Tombeau Estuary • 09:00 - 12:00", badge: "NGO Volunteer" },
+      { icon: "🎣", title: "Community Fishing & Heritage Talk", time: "Village Coastline • 16:00", badge: "Local Event" }
+    ]
+  },
   flic: {
     title: "Flic en Flac Beach & Lagoon",
     coords: "20.273° S, 57.363° E • Black River District",
