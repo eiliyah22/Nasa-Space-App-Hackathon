@@ -27,3 +27,18 @@ html, body {
 .map-tiles {
   filter: saturate(1.2) contrast(1.05) brightness(0.95);
 }
+
+.custom-leaflet-icon {
+  background: transparent;
+  border: none;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+.custom-popup .leaflet-popup-content {
+  margin: 0;
+  width: 260px !important; 
+}
