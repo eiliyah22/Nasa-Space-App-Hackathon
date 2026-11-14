@@ -1,4 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useNavigate } from 'react-router-dom'; // <-- ADDED
 import 'leaflet/dist/leaflet.css';
 import { icon, divIcon } from 'leaflet';
 import { MapPin, RefreshCw } from 'lucide-react';
@@ -45,6 +46,7 @@ const createLocationPointer = () => {
 };
 
 export default function RecreationTab() {
+  const navigate = useNavigate(); // <-- INITIALIZED HERE
   
   const center: [number, number] = [-20.28, 57.58];
 
@@ -52,12 +54,13 @@ export default function RecreationTab() {
     // --- LOCATION POINTERS ---
     {
       id: 'pointer-morne',
-      // UPDATED: Longitude increased to 57.345 to move it right, latitude aligned to -20.452
       coords: [-20.452, 57.345] as [number, number], 
       icon: createLocationPointer(),
       title: "Le Morne Beach",
       status: "Live Location Pointer",
-      description: "Exact coordinates for Le Morne coastal monitoring station."
+      description: "Exact coordinates for Le Morne coastal monitoring station. Click below to view the satellite comparative analysis.",
+      route: "/satellite-analysis", // <-- ADDED ROUTE
+      buttonText: "View Satellite Graphs" // <-- ADDED BUTTON TEXT
     },
     {
       id: 'pointer-tombeau',
@@ -166,9 +169,19 @@ export default function RecreationTab() {
                       <p className="text-[11px] font-bold text-ocean-600 mb-2 uppercase tracking-wide">{loc.status}</p>
                       
                       {loc.description && (
-                        <p className="text-xs text-slate-600 text-left leading-relaxed">
+                        <p className="text-xs text-slate-600 text-left leading-relaxed mb-4">
                           {loc.description}
                         </p>
+                      )}
+
+                      {/* BUTTON TO NAVIGATE TO NEW PAGE */}
+                      {loc.route && (
+                        <button 
+                          onClick={() => navigate(loc.route as string)}
+                          className="w-full bg-ocean-600 hover:bg-ocean-700 text-white font-bold text-xs py-2.5 rounded-lg transition"
+                        >
+                          {loc.buttonText || "View Details"}
+                        </button>
                       )}
                     </div>
                   </div>
