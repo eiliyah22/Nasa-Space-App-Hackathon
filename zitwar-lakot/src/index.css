@@ -20,3 +20,10 @@ html, body {
 .radar-sweep { background: conic-gradient(from 0deg, rgba(45, 212, 191, 0.35) 0deg, rgba(45, 212, 191, 0) 60deg); animation: sweep 4s linear infinite; }
 @keyframes sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .boat-marker { transition: all 1.8s ease-in-out; }
+
+.leaflet-container {
+  font-family: inherit;
+}
+.map-tiles {
+  filter: saturate(1.2) contrast(1.05) brightness(0.95);
+}
